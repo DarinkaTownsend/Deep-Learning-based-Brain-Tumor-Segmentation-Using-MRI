@@ -1,20 +1,18 @@
 # 🧠 Deep Learning-based Brain Tumor Segmentation Using MRI
 
-This project presents a deep learning pipeline for **brain tumor segmentation** using multi-modal MRI data from the **BraTS dataset**. A **2D U-Net model** was trained and evaluated using **5-fold cross-validation**, focusing on clinically relevant tumor regions described in the report. :contentReference[oaicite:0]{index=0}
+This project presents a deep learning pipeline for **brain tumor segmentation** using multi-modal MRI data from the **BraTS dataset**. A **2D U-Net model** was trained and evaluated using **5-fold cross-validation**, focusing on clinically relevant tumor regions described in the report.
 
----
-
+![Data Set](assignment2fig/fig1.png)
+![Data Set](assignment2fig/fig2.png)
 ## 🗂️ Dataset
 
-The experiments were conducted using the **BraTS brain tumor dataset**, which provides voxel-wise annotations for different tumor subregions. The label convention used in this project is: :contentReference[oaicite:2]{index=2}
+The experiments were conducted using the **BraTS brain tumor dataset**, which provides voxel-wise annotations for different tumor subregions. The label convention used in this project is: 
 
-- `0` → Background  
-- `1` → Necrotic and non-enhancing tumor core  
-- `2` → Peritumoral edema  
-- `4` → GD-enhancing tumor  
+![Data Set](assignment2fig/label.png) 
 
 For model development, only the training portion of the dataset was used, and a **5-fold cross-validation strategy** was applied.
 
+![Data Set](assignment2fig/data.png)
 ---
 
 ## ⚙️ Methodology
@@ -38,6 +36,7 @@ The model was trained using **5-fold cross-validation at the patient level**, en
 - **Loss function:** Cross-entropy / Dice-based loss  
 - **Number of epochs:** 15  
 
+![Training](assignment2fig/trainig.png)
 ---
 
 ## 📊 Evaluation Metrics
@@ -59,4 +58,8 @@ The tumor regions evaluated were: :contentReference[oaicite:8]{index=8}
 ---
 
 ## 📈 Results
+![Results 1](assignment2fig/prediction.png)
+![Results 2](assignment2fig/prediction2.png)
+![Results 3](assignment2fig/res1.png)
+![Results 4](assignment2fig/5folds.png)
 
