@@ -13,21 +13,21 @@ The experiments were conducted using the **BraTS brain tumor dataset**, which pr
 For model development, only the training portion of the dataset was used, and a **5-fold cross-validation strategy** was applied.
 
 ![Data Set](assignment2fig/data.png)
----
+
 
 ## ⚙️ Methodology
 
 ### Preprocessing
 
-The MRI volumes were processed **slice by slice** for 2D segmentation. Only slices containing relevant anatomical or tumor information were considered for training. Images were resized to **240 × 240**, and segmentation masks were converted into integer label maps for supervised learning. :contentReference[oaicite:4]{index=4}
+The MRI volumes were processed **slice by slice** for 2D segmentation. Only slices containing relevant anatomical or tumor information were considered for training. Images were resized to **240 × 240**, and segmentation masks were converted into integer label maps for supervised learning
 
 ### Model Architecture
 
-A **2D U-Net** architecture was used for the segmentation task. The model takes a single MRI slice as input and predicts a pixel-wise segmentation map. The encoder extracts high-level features through convolution and downsampling, while the decoder restores spatial resolution through upsampling and skip connections. :contentReference[oaicite:5]{index=5}
+A **2D U-Net** architecture was used for the segmentation task. The model takes a single MRI slice as input and predicts a pixel-wise segmentation map. The encoder extracts high-level features through convolution and downsampling, while the decoder restores spatial resolution through upsampling and skip connections
 
 ### Training Setup
 
-The model was trained using **5-fold cross-validation at the patient level**, ensuring that slices from the same patient did not appear in both training and validation subsets. The training configuration reported was: :contentReference[oaicite:6]{index=6}
+The model was trained using **5-fold cross-validation at the patient level**, ensuring that slices from the same patient did not appear in both training and validation subsets. The training configuration reported was:
 
 - **Input size:** 240 × 240  
 - **Batch size:** 4  
@@ -37,11 +37,11 @@ The model was trained using **5-fold cross-validation at the patient level**, en
 - **Number of epochs:** 15  
 
 ![Training](assignment2fig/trainig.png)
----
+
 
 ## 📊 Evaluation Metrics
 
-The segmentation performance was evaluated using the following metrics: :contentReference[oaicite:7]{index=7}
+The segmentation performance was evaluated using the following metrics:
 
 - **Dice Score**
 - **95% Hausdorff Distance (HD95)**
@@ -49,13 +49,12 @@ The segmentation performance was evaluated using the following metrics: :content
 - **Precision**
 - **Recall**
 
-The tumor regions evaluated were: :contentReference[oaicite:8]{index=8}
+The tumor regions evaluated were:
 
 - **Enhancing Tumor (ET):** label 4  
 - **Tumor Core (TC):** labels 1 and 4  
 - **Whole Tumor (WT):** labels 1, 2, and 4  
 
----
 
 ## 📈 Results
 ![Results 1](assignment2fig/prediction.png)
